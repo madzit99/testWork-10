@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../../app/Hooks";
+import { useAppSelector } from "../../app/Hooks";
 import { selectComments } from "./CommentsSlice";
 import { Box, Typography } from "@mui/material";
 import OneComment from "./OneComment";
