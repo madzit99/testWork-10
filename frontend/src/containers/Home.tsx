@@ -1,23 +1,17 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../app/Hooks";
+import { useEffect } from "react";
+import { useAppDispatch } from "../app/Hooks";
 import { fetchNews } from "../features/News/NewsThunks";
-import { SelectNews } from "../features/News/NewsSlice";
+import NewsList from "../features/News/NewsList";
 
 const Home = () => {
   const dispatch = useAppDispatch();
-  const news = useAppSelector(SelectNews);
 
   useEffect(() => {
     dispatch(fetchNews());
   }, [dispatch]);
   return (
     <div>
-      {news.map((oneNews) => (
-        <>
-          <h1>{oneNews.title}</h1>
-          <p>{oneNews.date.toString()}</p>
-        </>
-      ))}
+      <NewsList />
     </div>
   );
 };

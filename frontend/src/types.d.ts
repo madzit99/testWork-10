@@ -12,3 +12,22 @@ export interface FullNewsInterface {
   date: Date;
   text: string;
 }
+
+export interface Comments {
+  id: string;
+  newsId: string;
+  author: string;
+  text: string;
+}
+
+export interface CommentsMutation {
+  newsId: string;
+  author: string | null;
+  text: string;
+}
+
+export interface NewsMutation {
+  title: string;
+  text: string;
+  image: File | null;
+}

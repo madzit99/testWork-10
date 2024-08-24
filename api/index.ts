@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/news", newsRouter);
-app.use("/coments", commentsRouter);
+app.use("/comments", commentsRouter);
 
 const run = async () => {
   await mysqlDb.init();
