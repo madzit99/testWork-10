@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/Hooks";
 import { useParams } from "react-router-dom";
 import dayjs from "dayjs";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { apiURL } from "../../constants";
 import { SelectOneNews } from "./NewsSlice";
-import { selectComments } from "../Comments/CommentsSlice";
 import { fetchOneNews } from "./NewsThunks";
 import { deleteComment, fetchComments } from "../Comments/CommentsThunks";
 import Comments from "../Comments/Comments";
@@ -15,7 +14,6 @@ const FullNews = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id?: string }>();
   const fullNews = useAppSelector(SelectOneNews);
-  const comments = useAppSelector(selectComments);
 
   useEffect(() => {
     if (id) {

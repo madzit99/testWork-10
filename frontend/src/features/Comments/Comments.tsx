@@ -1,15 +1,13 @@
 import { useAppDispatch, useAppSelector } from "../../app/Hooks";
 import { selectComments } from "./CommentsSlice";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import OneComment from "./OneComment";
-import { deleteComment, fetchComments } from "./CommentsThunks";
 
 interface Props {
   onDelete: (commentId: string) => void;
 }
 
 const Comments: React.FC<Props> = ({ onDelete }) => {
-  const dispatch = useAppDispatch();
   const comments = useAppSelector(selectComments);
 
   return (
@@ -27,7 +25,7 @@ const Comments: React.FC<Props> = ({ onDelete }) => {
         </Box>
       ) : (
         <Typography variant="h3" sx={{ textAlign: "center" }}>
-          No comments available
+          Нет доступных комментариев.
         </Typography>
       )}
     </div>

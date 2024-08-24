@@ -51,7 +51,7 @@ const CommentsForm: React.FC<Props> = ({ idNews }) => {
         <Grid item xs={6} sx={{ ml: "-16px" }}>
           <TextField
             id="author"
-            label="Author"
+            label="Автор"
             name="author"
             value={state.author}
             onChange={inputChangeHandler}
@@ -61,7 +61,7 @@ const CommentsForm: React.FC<Props> = ({ idNews }) => {
         <Grid item xs={6} sx={{ ml: "-16px" }}>
           <TextField
             id="text"
-            label="Text"
+            label="Текст"
             name="text"
             value={state.text}
             onChange={inputChangeHandler}
@@ -78,7 +78,7 @@ const CommentsForm: React.FC<Props> = ({ idNews }) => {
             loadingPosition="start"
             startIcon={<SaveIcon />}
           >
-            Post!
+            Опубликовать комментарий
           </LoadingButton>
         </Grid>
       </Grid>
